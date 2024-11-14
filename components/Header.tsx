@@ -3,6 +3,7 @@
 // components/Header.tsx
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,10 +29,10 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 items-center justify-between p-4 md:p-6 sticky top-0 z-20">
-          <a href="/" className="text-gray-600 text-sm hover:text-purple-700">Home</a>
-          <a href="/about" className="text-gray-600 text-sm hover:text-purple-700">About us</a>
-          <a href="/notes" className="text-gray-600 text-sm hover:text-purple-700">Get Notes!</a>
-          <a href="/contact" className="text-gray-600 text-sm hover:text-purple-700">Contact</a>
+          <Link href="/" className="text-gray-600 text-sm hover:text-purple-700">Home</Link>
+          <Link href="/about" className="text-gray-600 text-sm hover:text-purple-700">About us</Link>
+          <Link href="/notes" className="text-gray-600 text-sm hover:text-purple-700">Get Notes!</Link>
+          <Link href="/contact" className="text-gray-600 text-sm hover:text-purple-700">Contact</Link>
         </nav>
       </header>
 
@@ -44,10 +45,10 @@ const Header: React.FC = () => {
           <div className="cursor-pointer" onClick={toggleMenu}></div>
         </div>
         <nav className="flex flex-col p-6 space-y-4">
-          <a href="/" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>Home</a>
-          <a href="/about" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>About us</a>
-          <a href="/notes" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>Get Notes!</a>
-          <a href="/contact" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>Contact</a>
+          <Link href="/" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>Home</Link>
+          <Link href="/about" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>About us</Link>
+          <Link href="/notes" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>Get Notes!</Link>
+          <Link href="/contact" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>Contact</Link>
         </nav>
       </div>
     </div>
