@@ -22,7 +22,9 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="flex-1 pl-6 mt-4 sm:mt-0">
             <Image
-              src="teacher.jpeg" // Replace with your classroom image
+              src="/teacher.jpeg" // Replace with your classroom image
+              width={400}
+              height="400"
               alt="Classroom"
               className="w-full sm:w-1/2 object-cover h-auto max-h-[600px] rounded-lg" // Increase width and max height for a bigger portrait
             />
@@ -40,7 +42,9 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="flex-1 pl-6 mt-4 sm:mt-0">
             <Image
-              src="coaching-centre.jpeg" // Replace with your classroom image
+              src="/coaching-centre.jpeg" // Replace with your classroom image
+              width={400}
+              height="400"
               alt="Classroom"
               className="w-full object-cover h-64 rounded-lg" />
           </div>
@@ -50,7 +54,9 @@ const AboutUs: React.FC = () => {
         <section className="flex flex-col sm:flex-row items-center mb-16 py-8 relative">
           <div className="flex-1 pr-6 mt-4 sm:mt-0">
             <Image
-              src="book1.jpeg" // Replace with your book image
+              src="/book1.jpeg" // Replace with your book image
+              width={400}
+              height="400"
               alt="Book 1"
               className="w-full object-cover h-64 rounded-lg" />
           </div>
