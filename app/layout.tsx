@@ -8,8 +8,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Flexcoach',
-  description: 'A coaching website focused on attitude and life skills',
+  title: 'Chemistry Expert',
+  description: 'A coaching website focused on teaching chemistry.',
 };
 
 export default function RootLayout({

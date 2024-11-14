@@ -1,10 +1,9 @@
-// components/Testimonials.tsx
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 const testimonials = [
   {
-    name: 'Aditya raizada',
+    name: 'Aditya Raizada',
     feedback: "Rakesh Sir is an excellent teacher who explains even the most complex topics in a very simple and understandable manner. His notes are incredibly helpful, as they break down the concepts step-by-step, making learning so much easier. Thanks to his guidance, I've been able to grasp difficult subjects with confidence!"
   },
   {
@@ -25,18 +24,20 @@ const Testimonials: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          What our student have <span className="text-purple-700">to say</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          What our students have <span className="text-purple-700">to say</span>
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
           Our life coaching methodology guides you on a deep transformational journey to find your calling, build rock-solid confidence, and excel in your career.
         </p>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-              <FaQuoteLeft className="text-purple-700 text-2xl mb-4" />
-              <p className="text-gray-600 mb-4">"{testimonial.feedback}"</p>
-              <h3 className="font-semibold text-gray-800">{testimonial.name}</h3>
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
+              <div className="text-purple-700 text-3xl mb-6 flex justify-center">
+                <FaQuoteLeft />
+              </div>
+              <p className="text-gray-600 text-lg italic mb-6">"{testimonial.feedback}"</p>
+              <h3 className="font-semibold text-gray-800 text-xl">{testimonial.name}</h3>
             </div>
           ))}
         </div>
