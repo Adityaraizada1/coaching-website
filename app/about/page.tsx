@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import NewFooter from "@/components/NewFooter";
 import Preloader from "@/components/Preloader";
+import Image from "next/image";
 import React from "react";
 
 const AboutUs: React.FC = () => {
@@ -20,7 +21,7 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           <div className="flex-1 pl-6 mt-4 sm:mt-0">
-            <img
+            <Image
               src="teacher.jpeg" // Replace with your classroom image
               alt="Classroom"
               className="w-full sm:w-1/2 object-cover h-auto max-h-[600px] rounded-lg" // Increase width and max height for a bigger portrait
