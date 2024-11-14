@@ -39,7 +39,7 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           <div className="flex-1 pl-6 mt-4 sm:mt-0">
-            <img
+            <Image
               src="coaching-centre.jpeg" // Replace with your classroom image
               alt="Classroom"
               className="w-full object-cover h-64 rounded-lg" />
@@ -49,7 +49,7 @@ const AboutUs: React.FC = () => {
         {/* Books Section */}
         <section className="flex flex-col sm:flex-row items-center mb-16 py-8 relative">
           <div className="flex-1 pr-6 mt-4 sm:mt-0">
-            <img
+            <Image
               src="book1.jpeg" // Replace with your book image
               alt="Book 1"
               className="w-full object-cover h-64 rounded-lg" />
