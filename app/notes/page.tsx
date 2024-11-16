@@ -5,7 +5,6 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import NewFooter from '@/components/NewFooter';
-import { FiArrowLeft } from 'react-icons/fi';
 
 const CategoryDetail: React.FC = () => {
   const router = useRouter();
