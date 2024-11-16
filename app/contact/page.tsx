@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
         {/* Under Construction Message */}
         <div className="text-center text-gray-600 mb-8">
           <h3 className="text-lg font-medium">This page is under construction.</h3>
-          <p>We are working hard to get it ready and it will be available by next Monday!</p>
+          <p>We are working hard to get it ready and it will be available in coming weeks!</p>
         </div>
 
         {/* Progress Bar */}
