@@ -1,58 +1,36 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import Header from "@/components/Header";
-import NewFooter from "@/components/NewFooter";
-import Preloader from "@/components/Preloader";
+// pages/contact.tsx
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import NewFooter from '@/components/NewFooter';
 
 const Contact: React.FC = () => {
-  const [progress, setProgress] = useState(0);
-
-  // Simulate loading bar progress
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prevProgress) => {
-        if (prevProgress === 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prevProgress + 1;
-      });
-    }, 2000); // Adjust the speed as necessary
-
-    return () => clearInterval(interval); // Cleanup the interval on unmount
-  }, []);
-
   return (
-    <>
-      <Preloader />
+    <div>
       <Header />
-      <div className="container mx-auto p-6">
-        <h1 className="text-4xl font-semibold text-center text-purple-800 mb-8">
+      <main className="flex flex-col items-center justify-center py-16 px-4 sm:px-8 md:px-16 lg:px-32 bg-gradient-to-b from-white to-gray-100 mt-16">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center leading-tight text-gray-800 tracking-wide">
           Contact Us
         </h1>
-
-        {/* Under Construction Message */}
-        <div className="text-center text-gray-600 mb-8">
-          <h3 className="text-lg font-medium">This page is under construction.</h3>
-          <p>We are working hard to get it ready and it will be available in coming weeks!</p>
+        <p className="mt-6 text-gray-700 text-center max-w-2xl text-lg md:text-xl leading-relaxed">
+          We would love to hear from you! Reach out to us through any of the channels below.
+        </p>
+        
+        <div className="mt-10 space-y-6 text-center">
+          <div className="text-lg md:text-xl">
+            <span className="font-semibold">Phone:</span> <a href="tel:+917973739678" className="text-purple-700 hover:underline">+91 79737 39678</a>
+          </div>
+          <div className="text-lg md:text-xl">
+            <span className="font-semibold">Email:</span> <a href="mailto:chemistryexpert21@gmail.com" className="text-purple-700 hover:underline">chemistryexpert21@gmail.com</a>
+          </div>
+          <div className="text-lg md:text-xl">
+            <span className="font-semibold">YouTube:</span> <a href="https://youtube.com/@chemistryexpertrakeshsir2392?feature=shared" target="_blank" className="text-purple-700 hover:underline">Our YouTube Channel</a>
+          </div>
         </div>
-
-        {/* Progress Bar */}
-        <div className="w-full bg-gray-300 rounded-full h-4 mb-6">
-          <div
-            className="bg-purple-600 h-full rounded-full"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-
-        {/* Status Text */}
-        <div className="text-center text-gray-600">
-          <p>{progress}% completed</p>
-        </div>
-      </div>
+      </main>
+      
+      <Footer />
       <NewFooter />
-    </>
+    </div>
   );
 };
 

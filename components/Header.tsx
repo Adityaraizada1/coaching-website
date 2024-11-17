@@ -39,6 +39,9 @@ const Header: React.FC = () => {
           <Link href="/notes" className="text-gray-600 text-sm hover:text-purple-700">
             Get Notes!
           </Link>
+          <Link href="/feedback" className="text-gray-600 text-sm hover:text-purple-700">
+            Feedback
+          </Link>
           <Link href="/contact" className="text-gray-600 text-sm hover:text-purple-700">
             Contact
           </Link>

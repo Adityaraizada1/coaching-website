@@ -124,7 +124,7 @@ const Class10Page: React.FC = () => {
             className="mb-4 flex items-center cursor-pointer hover:bg-purple-700 p-2 rounded-lg transition-colors"
             onClick={() => handleSidebarLinkClick("chapter1")}
           >
-            <FiBook className="mr-3" /> Chapter 1 Notes
+            <FiBook className="mr-3" /> Chapter Notes
           </li>
           <li
             className="mb-4 flex items-center cursor-pointer hover:bg-purple-700 p-2 rounded-lg transition-colors"
@@ -192,7 +192,7 @@ const Class10Page: React.FC = () => {
               <FiChevronLeft className="mr-2" /> Previous
             </button>
             <span className="text-lg text-gray-700">
-              Page {currentPage} of {Math.ceil(totalCards / cardsPerPage)}
+              {/* Page {currentPage} of {Math.ceil(totalCards / cardsPerPage)} */}
             </span>
             <button
               onClick={() => handlePageChange("next")}
