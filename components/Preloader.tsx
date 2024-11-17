@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { FiLoader } from 'react-icons/fi';
 
 const Preloader: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,14 +17,17 @@ const Preloader: React.FC = () => {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80 z-50 transition-opacity duration-500 opacity-100">
+    <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
       <div className="flex flex-col items-center">
-        {/* Spinner */}
-        <div className="w-16 h-16 border-8 border-t-8 border-purple-700 border-solid border-t-transparent rounded-full animate-spin-slow mb-4">
+        {/* Animated Spinner */}
+        <div className="w-16 h-16">
+          <FiLoader className="animate-spin text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500" style={{ fontSize: '3.5rem' }} />
         </div>
 
         {/* Loading Message */}
-        <p className="text-gray-700 text-lg font-semibold">Loading...</p>
+        <p className="text-white text-lg font-semibold mt-4 animate-pulse">
+          Loading, please wait...
+        </p>
       </div>
     </div>
   );

@@ -42,6 +42,9 @@ const Header: React.FC = () => {
           <Link href="/feedback" className="text-gray-600 text-sm hover:text-purple-700">
             Feedback
           </Link>
+          <Link href="/shop" className="text-gray-600 text-sm hover:text-purple-700">
+            Shop
+          </Link>
           <Link href="/contact" className="text-gray-600 text-sm hover:text-purple-700">
             Contact
           </Link>
@@ -68,6 +71,12 @@ const Header: React.FC = () => {
           </Link>
           <Link href="/notes" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>
             Get Notes!
+          </Link>
+          <Link href="/feedback" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>
+            Feedback
+          </Link>
+          <Link href="/shop" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>
+            Shop
           </Link>
           <Link href="/contact" className="text-gray-600 text-lg hover:text-purple-700" onClick={toggleMenu}>
             Contact
