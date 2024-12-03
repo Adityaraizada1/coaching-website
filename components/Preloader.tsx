@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { FiLoader } from 'react-icons/fi';
+import React, { useEffect, useState } from "react";
+import { FiLoader } from "react-icons/fi";
 
 const Preloader: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,16 +17,19 @@ const Preloader: React.FC = () => {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-      <div className="flex flex-col items-center">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
+      <div className="flex flex-col items-center gap-6">
         {/* Animated Spinner */}
-        <div className="w-16 h-16">
-          <FiLoader className="animate-spin text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500" style={{ fontSize: '3.5rem' }} />
+        <div className="relative w-16 h-16">
+          <span className="block w-full h-full rounded-full border-4 border-t-transparent border-purple-500 animate-spin"></span>
+          <span className="absolute inset-0 w-full h-full rounded-full border-4 border-t-transparent border-blue-400 animate-spin-slow"></span>
         </div>
 
-        {/* Loading Message */}
-        <p className="text-white text-lg font-semibold mt-4 animate-pulse">
-          Loading, please wait...
+        {/* Glowing Text */}
+        <p className="text-white text-lg font-semibold tracking-wide animate-pulse">
+          <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">
+            Loading, please wait...
+          </span>
         </p>
       </div>
     </div>
