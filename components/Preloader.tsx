@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { FiLoader } from "react-icons/fi";
 
 const Preloader: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);

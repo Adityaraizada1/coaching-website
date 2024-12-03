@@ -4,7 +4,6 @@
 import React, { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { useRouter } from "next/navigation";
-import ConstructionFooter from "@/components/ConstructionFooter";
 
 const ChemistryResourcesPage: React.FC = () => {
   const router = useRouter();
@@ -414,7 +413,6 @@ const ChemistryResourcesPage: React.FC = () => {
           Back to Main Notes
         </button>
       </div>
-
     </div>
   );
 };
