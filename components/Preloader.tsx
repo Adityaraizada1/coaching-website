@@ -9,16 +9,17 @@ const Preloader: React.FC = () => {
   const [progress, setProgress] = useState(0);
 
   const chemistryIcons = [
-    <GiChemicalDrop className="text-6xl text-purple-400 flicker" />,
-    <GiTestTubes className="text-6xl text-blue-400 flicker" />,
-    <GiAtom className="text-6xl text-green-400 flicker" />,
-    <GiFlake className="text-6xl text-yellow-400 flicker" />, // Replaced GiFlask with GiFlake
+    <GiChemicalDrop key="drop" className="text-6xl text-purple-400 flicker" />,
+    <GiTestTubes key="test-tubes" className="text-6xl text-blue-400 flicker" />,
+    <GiAtom key="atom" className="text-6xl text-green-400 flicker" />,
+    <GiFlake key="flake" className="text-6xl text-yellow-400 flicker" />,
   ];
 
   useEffect(() => {
     // Randomly pick a chemistry icon
-    const randomIcon = chemistryIcons[Math.floor(Math.random() * chemistryIcons.length)];
-    setCurrentIcon(randomIcon);
+    setCurrentIcon(
+      chemistryIcons[Math.floor(Math.random() * chemistryIcons.length)]
+    );
 
     // Simulate progress bar
     const progressInterval = setInterval(() => {
@@ -34,7 +35,7 @@ const Preloader: React.FC = () => {
       clearTimeout(timer);
       clearInterval(progressInterval);
     };
-  }, []);
+  }, [chemistryIcons]);
 
   if (!isLoading) return null;
 
@@ -42,17 +43,17 @@ const Preloader: React.FC = () => {
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-black z-50">
       <div className="flex flex-col items-center gap-6">
         {/* Chemistry Icon */}
-        <div>{currentIcon}</div>
+        <div className="animate-bounce">{currentIcon}</div>
 
         {/* Loading Text */}
-        <p className="text-white text-lg font-semibold tracking-wide animate-pulse">
+        <p className="text-white text-lg font-semibold tracking-wide animate-pulse text-center">
           Setting up your lab...
         </p>
 
         {/* Thin Progress Bar */}
-        <div className="w-3/4 h-0.5 bg-gray-700 mt-4">
+        <div className="w-3/4 max-w-sm h-1 bg-gray-700 mt-4 rounded-full overflow-hidden">
           <div
-            className="h-0.5 bg-gradient-to-r from-white to-gray-100 transition-all duration-75"
+            className="h-full bg-gradient-to-r from-white to-gray-100 transition-all duration-150"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
