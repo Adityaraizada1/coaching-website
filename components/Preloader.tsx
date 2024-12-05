@@ -35,7 +35,7 @@ const Preloader: React.FC = () => {
       {/* Thin Progress Bar */}
       <div className="w-3/4 max-w-md h-1 bg-gray-700 rounded-full overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-green-400 to-blue-500 transition-all duration-150"
+          className="h-full bg-gradient-to-r from-white to-gray-300 transition-all duration-150"
           style={{ width: `${progress}%` }}
         ></div>
       </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import NewFooter from "@/components/NewFooter";
 import Preloader from "@/components/Preloader";
@@ -19,7 +20,7 @@ const AboutUs: React.FC = () => {
             <div className="flex-1 pr-6 text-center sm:text-left">
               <h2 className="text-3xl font-semibold text-purple-700 mb-4">Rakesh Sir</h2>
               <p className="text-lg text-gray-600 max-w-md mx-auto leading-relaxed">
-                Rakesh Sir is a passionate educator with over 10 years of experience in teaching Chemistry. His
+                Rakesh Sir is a passionate educator with over 15 years of experience in teaching Chemistry. His
                 teaching methodology focuses on making complex concepts easy and understandable for students.
               </p>
             </div>
@@ -99,6 +100,7 @@ const AboutUs: React.FC = () => {
           </section>
 
           {/* Footer Section */}
+          <Footer />
           <NewFooter />
         </div>
       </div>

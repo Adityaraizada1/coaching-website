@@ -13,7 +13,13 @@ export default {
         foreground: "var(--foreground)",
       },
       animation: {
-        'spin-slow': 'spin 3s linear infinite',
+        rotate: "rotate 1.5s ease-in-out infinite", // Rotate back and forth
+      },
+      keyframes: {
+        rotate: {
+          "0%, 100%": { transform: "rotate(-15deg)" },
+          "50%": { transform: "rotate(15deg)" },
+        },
       },
     },
   },

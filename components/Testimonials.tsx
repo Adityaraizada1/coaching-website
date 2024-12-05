@@ -1,43 +1,156 @@
-import React from 'react';
-import { FaQuoteLeft } from 'react-icons/fa';
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { FaQuoteLeft, FaStar, FaStarHalfAlt, FaRegStar, FaSearch } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: 'Aditya Raizada',
-    feedback: "Rakesh Sir is an excellent teacher who explains even the most complex topics in a very simple and understandable manner. His notes are incredibly helpful, as they break down the concepts step-by-step, making learning so much easier. Thanks to his guidance, I've been able to grasp difficult subjects with confidence!"
+    name: "Aditya Raizada",
+    photo: "/student-2.jpg", // Replace with actual photo URL
+    stars: 5,
+    feedback:
+      "Rakesh Sir's teaching style is amazing. His notes are concise and easy to understand, helping me tackle even the toughest topics with ease.",
   },
   {
-    name: 'Sheril Dhiman',
-    feedback: "I've been attending Rakesh Sir's classes for a while now, and his teaching style is simply outstanding. His notes are clear, concise, and packed with useful examples that make revision so much more effective. They’ve really helped me improve my understanding and scores!",
+    name: "Sheril Dhiman",
+    photo: "/student-1.jpg", // Replace with actual photo URL
+    stars: 5,
+    feedback:
+      "Rakesh Sir's notes and guidance have significantly boosted my understanding and confidence during exams.",
   },
   {
-    name: 'Prachi',
-    feedback: "Rakesh Sir is a great mentor, always willing to go the extra mile to ensure we understand the subject thoroughly. His notes are a lifesaver, covering all the key points and providing additional explanations that make studying less stressful. They have been invaluable during exam preparation!",
+    name: "Prachi",
+    photo: "/placeholder-profile3.png", // Replace with actual photo URL
+    stars: 4.5,
+    feedback:
+      "The notes are clear and well-organized. Rakesh Sir ensures every concept is easy to grasp.",
   },
   {
-    name: 'Amitti',
-    feedback: "I cannot thank Rakesh Sir enough for his support and guidance. His notes are always well-organized, easy to follow, and cover everything needed for a deep understanding of the topic. I find them incredibly useful for revision and reinforcing concepts. His efforts have truly made a difference in my learning journey!",
+    name: "Amitti",
+    photo: "/placeholder-profile4.png", // Replace with actual photo URL
+    stars: 4,
+    feedback:
+      "A fantastic mentor! The notes are incredibly helpful for revision and understanding key concepts.",
   },
 ];
 
 const Testimonials: React.FC = () => {
+  const [isSearching, setIsSearching] = useState(true);
+  const [randomTestimonial, setRandomTestimonial] = useState(testimonials[0]);
+
+  // Simulate searching process
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+
+    if (isSearching) {
+      interval = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * testimonials.length);
+        setRandomTestimonial(testimonials[randomIndex]);
+      }, 1000);
+
+      setTimeout(() => {
+        setIsSearching(false);
+      }, 5000); // Searching lasts 5 seconds
+    }
+
+    return () => clearInterval(interval);
+  }, [isSearching]);
+
+  const renderStars = (rating: number) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 !== 0;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+    return (
+      <div className="flex">
+        {Array(fullStars)
+          .fill(null)
+          .map((_, i) => (
+            <FaStar key={`full-${i}`} className="text-yellow-400 text-sm" />
+          ))}
+        {halfStar && <FaStarHalfAlt className="text-yellow-400 text-sm" />}
+        {Array(emptyStars)
+          .fill(null)
+          .map((_, i) => (
+            <FaRegStar key={`empty-${i}`} className="text-yellow-400 text-sm" />
+          ))}
+      </div>
+    );
+  };
+
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+    <section className="py-12 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        {/* Searching Animation */}
+        <div className="flex justify-center items-center gap-2 mb-6">
+          <FaSearch className="text-purple-700 text-lg animate-rotate" />
+          <p className="text-gray-600 text-sm italic">
+            Still searching for more students...
+          </p>
+        </div>
+
+        {/* Random Testimonial Display During Searching */}
+        {isSearching && (
+          <div className="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto mb-10">
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={randomTestimonial.photo}
+                alt={`${randomTestimonial.name}'s profile`}
+                className="w-10 h-10 rounded-full object-cover"
+              />
+              <div className="text-left">
+                <h3 className="text-sm font-semibold text-gray-800">
+                  {randomTestimonial.name}
+                </h3>
+                {renderStars(randomTestimonial.stars)}
+              </div>
+            </div>
+            <div className="text-left">
+              <FaQuoteLeft className="text-purple-700 text-xl mb-2" />
+              <p className="text-gray-600 text-sm italic">
+                "{randomTestimonial.feedback}"
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Main Testimonials Header */}
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
           What our students have <span className="text-purple-700">to say</span>
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-          Our life coaching methodology guides you on a deep transformational journey to find your calling, build rock-solid confidence, and excel in your career.
+        <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+          Hear how Rakesh Sir's notes and teaching have made a difference.
         </p>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        {/* Testimonials Grid */}
+        <div className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ${isSearching ? "hidden" : "block"}`}>
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out">
-              <div className="text-purple-700 text-3xl mb-6 flex justify-center">
-                <FaQuoteLeft />
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg duration-300 ease-in-out"
+            >
+              {/* Reviewer Info */}
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={testimonial.photo}
+                  alt={`${testimonial.name}'s profile`}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+                <div className="text-left">
+                  <h3 className="text-sm font-semibold text-gray-800">
+                    {testimonial.name}
+                  </h3>
+                  {renderStars(testimonial.stars)}
+                </div>
               </div>
-              <p className="text-gray-600 text-lg italic mb-6">"{testimonial.feedback}"</p>
-              <h3 className="font-semibold text-gray-800 text-xl">{testimonial.name}</h3>
+
+              {/* Feedback */}
+              <div className="text-left">
+                <FaQuoteLeft className="text-purple-700 text-xl mb-2" />
+                <p className="text-gray-600 text-sm italic">
+                  "{testimonial.feedback}"
+                </p>
+              </div>
             </div>
           ))}
         </div>

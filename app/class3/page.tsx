@@ -35,14 +35,78 @@ const ChemistryResourcesPage: React.FC = () => {
     }
   };
 
+  // PDFs data for different topics
   const chemistryTopics = [
     {
       id: 3,
       topic: "Chemical Kinetics",
       pdfs: [
         { id: "3a", title: "10 year", url: "/class12/chemical-kinetics/Chapter-4-Chemical-Kinetics.pdf" },
-        { id: "3b", title: "MCQs", url: "/class12/chemical-kinetics/Chemical-kinetics-MCQs.pdf" },
-        { id: "3c", title: "Marks Wise Questions", url: "/class12/chemical-kinetics/Marks-wise-Questions.pdf" },
+        {
+          id: "3b",
+          title: "MCQs",
+          url: "/class12/chemical-kinetics/Chemical-kinetics-MCQs.pdf",
+        },
+        {
+          id: "3c",
+          title: "Marks Wise Questions",
+          url: "/class12/chemical-kinetics/Marks-wise-Questions.pdf",
+        },
+        {
+          id: "3d",
+          title: "Practice Questions",
+          url: "/class12/chemical-kinetics/Practice-Questions.pdf",
+        },
+        {
+          id: "3e",
+          title: "Prev. year Question Paper",
+          url: "/class12/chemical-kinetics/Prevoius-year-Questions.pdf",
+        },
+        {
+          id: "3f",
+          title: "PYQs",
+          url: "/class12/chemical-kinetics/PYQs.pdf",
+        },
+        {
+          id: "3g",
+          title: "Test Paper 1",
+          url: "/class12/chemical-kinetics/Test-Paper-01.pdf",
+        },
+        {
+          id: "3h",
+          title: "Test Paper 2",
+          url: "/class12/chemical-kinetics/Test-Paper-02.pdf",
+        },
+        {
+          id: "3i",
+          title: "Test Paper 3",
+          url: "/class12/chemical-kinetics/Test-Paper-03.pdf",
+        },
+        {
+          id: "3j",
+          title: "Test Paper 4",
+          url: "/class12/chemical-kinetics/Test-Paper-04.pdf",
+        },
+        {
+          id: "3k",
+          title: "Test Paper 5",
+          url: "/class12/chemical-kinetics/Test-Paper-05.pdf",
+        },
+        {
+          id: "3l",
+          title: "VBQs",
+          url: "/class12/chemical-kinetics/VBQs.pdf",
+        },
+        {
+          id: "3m",
+          title: "WorkSheet 1",
+          url: "/class12/chemical-kinetics/W1.pdf",
+        },
+        {
+          id: "3n",
+          title: "WorkSheet 2",
+          url: "/class12/chemical-kinetics/W2.pdf",
+        },
       ],
     },
   ];
