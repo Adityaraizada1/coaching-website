@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { FaQuoteLeft, FaStar, FaStarHalfAlt, FaRegStar, FaSearch } from "react-icons/fa";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -20,14 +21,14 @@ const testimonials = [
   },
   {
     name: "Prachi",
-    photo: "/placeholder-profile3.png", // Replace with actual photo URL
+    photo: "/student-3.jpg", // Replace with actual photo URL
     stars: 4.5,
     feedback:
       "The notes are clear and well-organized. Rakesh Sir ensures every concept is easy to grasp.",
   },
   {
     name: "Amitti",
-    photo: "/placeholder-profile4.png", // Replace with actual photo URL
+    photo: "/student-4.jpg", // Replace with actual photo URL
     stars: 4,
     feedback:
       "A fantastic mentor! The notes are incredibly helpful for revision and understanding key concepts.",
@@ -93,10 +94,12 @@ const Testimonials: React.FC = () => {
         {isSearching && (
           <div className="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto mb-10">
             <div className="flex items-center gap-3 mb-4">
-              <img
+              <Image
                 src={randomTestimonial.photo}
                 alt={`${randomTestimonial.name}'s profile`}
-                className="w-10 h-10 rounded-full object-cover"
+                width={40}
+                height={40}
+                className="rounded-full object-cover"
               />
               <div className="text-left">
                 <h3 className="text-sm font-semibold text-gray-800">
@@ -131,10 +134,12 @@ const Testimonials: React.FC = () => {
             >
               {/* Reviewer Info */}
               <div className="flex items-center gap-3 mb-4">
-                <img
+                <Image
                   src={testimonial.photo}
                   alt={`${testimonial.name}'s profile`}
-                  className="w-10 h-10 rounded-full object-cover"
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover"
                 />
                 <div className="text-left">
                   <h3 className="text-sm font-semibold text-gray-800">

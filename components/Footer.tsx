@@ -16,7 +16,7 @@ const AnimatedCounter: React.FC<{ target: number; suffix?: string; animateRandom
     if (animateRandom) {
       // Animate up and down randomly
       interval = setInterval(() => {
-        setCount((prev) => {
+        setCount(() => {
           const randomChange = Math.floor(Math.random() * 10 - 5); // Random fluctuation: -5 to +5
           const newCount = Math.max(target + randomChange, target); // Ensure it stays above or equal to target
           return newCount;
